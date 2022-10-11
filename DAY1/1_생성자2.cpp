@@ -25,8 +25,8 @@ public:
 	// 해결책
 	// => 기반 클래스에 디폴트 생성자가 없으면 반드시 파생 클래스에서
 	//    기반 클래스 생성자를 명시적으로 호출해야 합니다.
-	Student(const std::string& name, int age, int n) 
-				: People(name, age), id(n) {}
+	Student(const std::string& name, int age, int id) 
+				: People(name, age), id(id) {}
 };
 
 
