@@ -1,6 +1,19 @@
 #include <iostream>
 #include <vector>
 
+
+// 핵심 6. 리팩토링의 유명한 용어 입니다. 이해해 보세요
+
+//        "Replace conditional with polymorphism"
+
+//		  "제어문(예제5-1) 을 다형성(예제 5-2) 로 변경해라"
+//         if 또는 switch 문 대신에 "가상함수"를 먼저 생각하라는 의미
+
+
+
+
+
+
 class Shape
 {
 	int color;
