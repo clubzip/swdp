@@ -19,7 +19,7 @@ public:
 //	virtual void fooo()  {}		// ¿¡·¯ ¾Æ´Ô
 // 	virtual void goo(double)  {}
 
-	virtual void fooo() override {}		 // error
+	virtual void fooo()      override {} // error
 	virtual void goo(double) override {} // error
 
 };
