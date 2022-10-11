@@ -15,8 +15,14 @@ class Shape
 	int color;
 public:
 	// 아래 2개의 멤버함수는 "virtual" 로 할까요 ? "non-virtual"로 할까요 ?
+	// => 파생 클래스가 재정의 할 필요 없습니다. "non-virtual"
 	void SetColor(int c) { color = c; }
 	int  GetColor() const { return color; }
+
+	// 면적을 구하는 방법은 모든 도형이 다릅니다.
+	// => "virtual" 로 만들고, 파생 클래스가 재정의 할수 있게.. 
+	virtual int GetArea() const  { return -1; }
+
 
 	virtual void Draw() { std::cout << "Draw Shape" << std::endl; }
 };
