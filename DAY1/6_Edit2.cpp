@@ -3,7 +3,7 @@
 #include <conio.h>
 
 // 입력값의 validation 정책은 변경가능해야 합니다.
-// 방법 1. 
+// 방법 1. 변하는 부분을 가상함수로 - 템플릿 메소드 패턴
 
 class Edit
 {
