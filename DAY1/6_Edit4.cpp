@@ -50,6 +50,11 @@ public:
 	{
 		return s.size() < value && isdigit(c);
 	}
+
+	virtual bool iscomplete(const std::string& s) override
+	{
+		return s.size() == value;
+	}
 };
 
 int main()
