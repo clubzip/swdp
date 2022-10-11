@@ -57,11 +57,17 @@ public:
 	}
 };
 
+
+
 int main()
 {
 	Edit e;
-	LimitDigitValidator v(5);
-	e.setValidator(&v); // v를 사용해서 값의 유효성을 확인해 달라.
+//	LimitDigitValidator v(5);
+//	e.setValidator(&v); // v를 사용해서 값의 유효성을 확인해 달라.
+
+	UpperLetterValidator v2(5); // 대문자(최대5자)만 입력되도록하는 validator
+	e.setValidator(&v2);
+
 
 	while (1)
 	{
@@ -69,4 +75,9 @@ int main()
 	}
 }
 
+// 정리 
+// 변하는 것( Validation 정책) 을 분리하는 2가지 기술
+
+// 변하는 것(validation 정책)을 가상함수로 분리    : template method(Edit2)
+// 변하는 것(validation 정책)을 다른 클래스로 분리 : strategy pattern(Edit4)
 
