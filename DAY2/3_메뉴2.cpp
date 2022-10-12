@@ -23,6 +23,7 @@ public:
 
 	std::string get_title() const { return title; }
 
+	// 메뉴 선택시 호출되는 함수.. 
 	void command()
 	{
 		std::cout << get_title() << " 메뉴 선택됨" << std::endl;
@@ -31,6 +32,8 @@ public:
 };
 int main()
 {
+	// 객체지향 프로그램에서 "모든 것은 객체" 입니다.
+	// 메뉴항목 한개도 역시 객체로 관리되어야 합니다.
 	MenuItem m1("김밥", 11);
 	MenuItem m2("라면", 12);
 	m1.command(); // 메뉴 선택시 호출되는 함수!
