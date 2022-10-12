@@ -3,6 +3,10 @@
 
 // 방법 1. 변하는 것을 가상함수로!! template method
 
+// => List 외에도 vector, set, map 등 다른 컨테이너도 동기화가 필요하다.
+// => 동기화 정책을 재사용할수 없다.!
+
+
 template<typename T> class List
 {
 public:
