@@ -41,6 +41,7 @@ public:
 		}
 		std::cout << sz + 1 << ". 종료" << std::endl;
 
+		std::cout << "메뉴를 선택하세요 >> ";
 		int cmd;
 		std::cin >> cmd;
 		v[cmd - 1]->command(); // 선택된 메뉴 항목 실행
