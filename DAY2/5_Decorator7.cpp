@@ -26,8 +26,7 @@ public:
 
 int main()
 {
-	FileStream fs("a.txt");
-	fs.Write("hello");
+
 
 	// 파일에 쓸때, 암호화 해서 쓰는 기능이 필요 합니다.!!
 	// 최선의 방법을 찾아 봅시다.
@@ -46,11 +45,20 @@ int main()
 	// 방법 4. 기존 클래스가 수정되지 않고, 미래의 요구사항을 계속 추가해야 한다.
 	// => "Decorator"!
 
-	EncrpytDecorator ed(&fs);
-	ed.Write("Hello");	// 1. Hello 를 암호화 하고
+	FileStream fs("a.txt");
+	fs.Write("hello");
+
+
+	EncryptDecorator ed(&fs); // ed(&networkstream),  ed(&pipestream)
+	ed.Write("Hello");	// 1. Hello 를 암호화 하고 <== 추가된 기능
 						// 2. fs.Write(암호화된데이타) 
 
 	ZipDecorator zd(&ed);
-	zd.Write("Hello");
+	zd.Write("Hello");	// 1. 압축기능을 수행하고
+						// 2. ed.Write() <=== 암호화 기능 수행
+						// 3. fs.Write(압축하고 암호화 된 데이타)
+
+	// 새로운 요구 사항(XML로 쓰기, json으로 쓰기등)이 생기면
+	// "Decorator"들만 계속 만들면 됩니다.
 	
 }
