@@ -64,3 +64,20 @@ int main()
 	ZipDecorator zd(&ed);
 	zd.Write("Hello");	
 }
+// C# 언어에는
+
+// backing store(실제IO 수행)		Decorator
+// 
+// FileStream					ZipStream
+// NetworkStream				EncryptStream
+// PipeStream					XmlStream
+// MemoryStream					BinaryStream
+//								HtmlStream 
+
+// C++에서는 "Decorator" 를 많이 사용하지는 않습니다
+// C#, java 는 상당이 많이 사용합니다.
+
+// python : @ 로 시작하는 것들이 decorator 입니다. 
+//			개념은 위 코드와 유사한데..
+//			만드는 방법은 전혀 다릅니다.
+//			@class, @wrap 등
