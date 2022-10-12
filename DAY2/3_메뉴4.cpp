@@ -94,7 +94,7 @@ int main()
 	mainMenu.add_menu(&pm); // 핵심  add_menu(&팝업메뉴)
 	mainMenu.add_menu(&m3); //      add_menu(&메뉴아이템)
 
-	PopupMenu.command();
+	mainMenu.command();
 }
 
 
