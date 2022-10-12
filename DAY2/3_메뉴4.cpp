@@ -13,7 +13,14 @@ public:
 	virtual ~BaseMenu() {}
 
 	std::string get_title() const { return title; }
+
+	// 모든 메뉴는 선택될수 있다!!
+	// => 세부 구현은 파생 클래스에서!!
+	virtual void command() = 0;
 };
+
+
+
 
 class MenuItem : public BaseMenu
 {
@@ -28,7 +35,6 @@ public:
 		_getch();
 	}
 };
-
 class PopupMenu : public BaseMenu
 {
 	std::vector<BaseMenu*> v; // <<=== 핵심
