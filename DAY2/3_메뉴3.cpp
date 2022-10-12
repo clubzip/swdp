@@ -33,18 +33,32 @@ public:
 	// 팝업메뉴 선택시 해야할일(main 함수주석)을 어떻게 구할할지 생각해 보세요.
 	void command()
 	{
-		std::size_t sz = v.size(); // 하위 메뉴 갯수
-
-		for (std::size_t i = 0; i < sz; i++)
+		while (1)
 		{
-			std::cout << i + 1 << "." << v[i]->get_title() << std::endl;
-		}
-		std::cout << sz + 1 << ". 종료" << std::endl;
+			system("cls");
 
-		std::cout << "메뉴를 선택하세요 >> ";
-		int cmd;
-		std::cin >> cmd;
-		v[cmd - 1]->command(); // 선택된 메뉴 항목 실행
+			std::size_t sz = v.size(); // 하위 메뉴 갯수
+
+			for (std::size_t i = 0; i < sz; i++)
+			{
+				std::cout << i + 1 << ". " << v[i]->get_title() << std::endl;
+			}
+			std::cout << sz + 1 << ". 종료" << std::endl;
+
+			std::cout << "메뉴를 선택하세요 >> ";
+			int cmd;
+			std::cin >> cmd;
+
+			if (cmd == sz + 1) // 종료 선택
+				break;  // 또는 return 
+
+			if (cmd < 1 || cmd > sz + 1) // 잘못된 입력
+				continue;
+
+
+			v[cmd - 1]->command(); // 선택된 메뉴 항목 실행
+		}
+
 	}
 };
 
@@ -69,7 +83,7 @@ int main()
 					// 1. 김밥
 					// 2. 라면
 					// 3. 종료
-					// 메뉴를 선택하세요 >> 
+					// 메뉴를 선택하세요 >>  
 }
 
 
