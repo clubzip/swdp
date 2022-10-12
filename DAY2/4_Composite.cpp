@@ -19,14 +19,46 @@
 // 아래 main 실행되도록 완성해 보세요
 // => 공통의 기반 클래스 이름 Component 로 해보세요
 
+class Component
+{
+	// File 과 Folder 의 공통의 특징을 넣으세요.
+	// 1. 모두 이름이 있습니다.
+	// 2. 크기를 구할수 있습니다.(단, 폴더는 자신의 크기는 없습니다.)
+	std::string name;
+public:
+	Component(const std::string& name) : name(name) {}
 
-class File  
-{
-public:
+	virtual int getSize() const = 0; // 핵심!!!
 };
-class Folder 
+
+class File : public Component
 {
+	int size;
 public:
+	File(const std::string& name, int size)
+		: Component(name), size(size) {}
+
+	virtual int getSize() const override  { return size; }
+};
+
+class Folder : public Component
+{
+	std::vector<Component*> v;
+public:
+	Folder(const std::string& name) : Component(name) {}
+
+	void addItem(Component* p) { v.push_back(p); }
+
+	virtual int getSize()const override
+	{
+		int size = 0;
+		
+		// 폴더의 크기는 자신이 보관하는 모든 멤버의 크기를 합하면 됩니다
+		for (auto p : v)
+			size = size + p->getSize();
+
+		return size;
+	}
 };
 
 
@@ -48,8 +80,8 @@ int main()
 
 	// 파일은 자신만의 크기는 있습니다.
 	// 폴더는 자신만의 크기는 없지만 크기를 구할수 있습니다.
-	cout << f2->getSize() << endl; // 20
-	cout << fo1->getSize() << endl; // 10
-	cout << root->getSize() << endl; // 30
+	std::cout << f2->getSize() << std::endl; // 20
+	std::cout << fo1->getSize() << std::endl; // 10
+	std::cout << root->getSize() << std::endl; // 30
 }
 
