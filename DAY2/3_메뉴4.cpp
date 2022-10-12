@@ -20,8 +20,6 @@ public:
 };
 
 
-
-
 class MenuItem : public BaseMenu
 {
 	int id;
@@ -72,7 +70,11 @@ public:
 				continue;
 
 
-			v[cmd - 1]->command(); 
+			v[cmd - 1]->command(); // 다형성 !!
+									// 동일한 표현식이지만
+									// v[cmd-1] 이 어떤 메뉴인지에 따라	
+									// 다르게 동작
+									// v[cmd-1] 이 어떤 메뉴인지 조사할 필요 없다.!!
 		}
 
 	}
