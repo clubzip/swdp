@@ -84,6 +84,7 @@ int main()
 
 	root->add_menu(p1);
 	root->add_menu(p2);
+//	p1->add_menu(p2);
 
 	p1->add_menu(new MenuItem("RED",   11));
 	p1->add_menu(new MenuItem("GREEN", 12));
@@ -92,10 +93,26 @@ int main()
 	p2->add_menu(new MenuItem("HD",  21));
 	p2->add_menu(new MenuItem("FHD", 22));
 	p2->add_menu(new MenuItem("UHD", 23));
+	p2->add_menu(new MenuItem("8K",  24));
 
 	// 이제 시작하려면 ??
-
+	root->command();
 }
+
+// 핵심 
+// Composite 패턴
+// 복합객체(PopupMenu) 는 개별객체(MenuItem) 뿐 아니라
+// 복합객체 자신도 보관한다.
+// => 복합객체와 개별객체는 공통의 기반 클래스가 필요 한다.
+
+// 복합객체와 개별객체는 사용법이 동일하다.
+// => 선택시 모두 command 호출
+// => command 는 기반 클래스에 선언이 있어야 한다.
+
+// 복합객체는 "tree" 구조로 구성된다.
+// => main 코드에서 root, 색상변경, 해상도 변경 객체의
+//    구조를 생각해 보세요.
+
 
 
 
