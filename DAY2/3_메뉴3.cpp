@@ -20,6 +20,24 @@ public:
 	}
 };
 
+// MenuItem 객체를 여러개 보관하는 클래스
+class PopupMenu
+{
+	std::string title;
+	std::vector<MenuItem*> v;
+public:
+	PopupMenu(const std::string& title) : title(title) {}
+
+	void add_menu(MenuItem* p) { v.push_back(p); }
+
+	// 팝업메뉴 선택시 해야할일(main 함수주석)을 어떻게 구할할지 생각해 보세요.
+	void command()
+	{
+
+	}
+};
+
+
 int main()
 {
 	MenuItem m1("김밥", 11);
