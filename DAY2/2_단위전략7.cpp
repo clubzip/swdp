@@ -21,26 +21,26 @@ template<typename T> struct debug_alloc
 	}
 	// 관례적으로 모든 할당기는 아래 3개의 멤버도 필요 합니다.
 	using value_type = T;
-
 	debug_alloc() = default;
-
 	template<typename U> debug_alloc(const debug_alloc<U>&) {}	
 };
-
-
-
 
 int main()
 {
 	std::vector<int, debug_alloc<int> > v;
 
 	std::cout << "============" << std::endl;
-
 	v.resize(5);
 
 	std::cout << "============" << std::endl;
-
 	v.resize(10);
 
 	std::cout << "============" << std::endl;
+	v.push_back(0); // 크기가 11개가 될까요 ??
+					// 좀더 커질까요 ? (capacity 개념)
+
+	std::cout << v.size() << std::endl; // size 는 11이지만
+	std::cout << v.capacity() << std::endl; // 메모리 사용량은 더 커집니다.
+											// vc: 1.5 배
+											// g++ : 2배
 }
