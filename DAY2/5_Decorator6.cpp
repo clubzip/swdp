@@ -37,10 +37,10 @@ int main()
 
 
 	// FileStream 외에 다양한 Stream 이 있다고 가정해 봅시다.
-	NetworkStream ns("127.0.0.1", 4000);
-	ns.Write("hello");
+//	NetworkStream ns("127.0.0.1", 4000);
+//	ns.Write("hello");
 
 
-	PipeStream ps("namedpipe");
-	ps.Write("hello");
+//	PipeStream ps("namedpipe");
+//	ps.Write("hello");
 }
