@@ -105,6 +105,8 @@ int main()
 	// 2. BaseMenu 에 add_menu 선언을 넣어 주자!
 	root->submenu(1)->add_menu(new MenuItem("RED", 11));
 
+	// (*root)[1].add_menu(  ) 도 도전해보세요..
+
 //	root->submenu(2)->add_menu(new MenuItem("기타2", 31)); // 예외
 					// root->submenu(2) 는 "Popup" 이 아닌 "MenuItem"
 
