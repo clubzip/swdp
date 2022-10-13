@@ -2,6 +2,7 @@
 #include <iostream>
 
 // 싱글톤 코드를 자동생성하는 매크로를 만들어 봅시다.
+/*
 #define MAKE_SINGLETON(classname)						\
 private:												\
 	classname() {}										\
@@ -13,7 +14,8 @@ public:													\
 		static classname instance;						\
 		return instance;								\
 	}
-
+*/
+#include "helper.h" // 이 안에 위 코드 있습니다.
 
 class Cursor
 {
