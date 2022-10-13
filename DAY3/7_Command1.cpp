@@ -132,7 +132,8 @@ int main()
 			if (cmd_stack.empty()) break;
 
 			pcmd = cmd_stack.top();
-			
+			cmd_stack.pop();
+
 			if (pcmd->canUndo())
 				pcmd->undo();
 
