@@ -37,7 +37,8 @@ int main()
 
 	// 유연성, 확장성, OCP 를 고려한다면 약한결한(인터페이스 기반 통신)
 	// 이 좋습니다.
-	ICalc* pCalc = new ? ? ? ;
+	ICalc* pCalc = new ? ? ? ; // new ICalc 는 안됩니다.!!
+								// new Calc 는 강한결합이므로 교체 안됩니다.
 
 
 	std::cout << pCalc->Add(10, 20) << std::endl;
