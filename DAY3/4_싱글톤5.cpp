@@ -61,6 +61,14 @@ public:
 				// 1. Cursor 크기 메모리 할당 : sinstance = malloc(sizeof(Cursor))
 				// 2. 생성자 호출            : sinstance.Cursor();
 
+
+				// 해결책 : 컴파일러가 최적화 하면서 순서를 변경하지 못하도록 하면됩니다.
+				// C++11 부터 나오는
+				// std::atomic_thread_fence() 같은 함수를 사용하면 됩니다.
+				// 구글에서 "C++11 DCLP atomic"
+				// => "Double-Checked Locking is Fixed In C++11" 보세요
+
+
 			}
 			mtx.unlock();
 		}
