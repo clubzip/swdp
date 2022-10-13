@@ -34,7 +34,11 @@ ICalc* CreateCalc()
 // 2. 윈도우 시작 버튼 - Visual Studio 폴더 - "개발자 명령프롬프트실행"하세요
 
 // 3. 소스가 있는 폴더로 이동후
+// 
+//   => D:  하면 드라이브 이동
+//   => cd DAY3  하면 폴더이동
+//   => cd ..    상위 폴더로 이동
 
 // 4. cl CalcProxy.cpp /LD /link user32.lib gdi32.lib kernel32.lib
 
-
+// "/LD" : DLL로 빌드하는 옵션
