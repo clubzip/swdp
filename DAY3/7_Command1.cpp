@@ -129,20 +129,23 @@ int main()
 		}
 		else if (cmd == 0)
 		{
-			if (cmd_stack.empty()) break;
+			if ( !cmd_stack.empty() )
+			{
 
-			pcmd = cmd_stack.top();
-			cmd_stack.pop();
+				pcmd = cmd_stack.top();
+				cmd_stack.pop();
 
-			if (pcmd->canUndo())
-				pcmd->undo();
+				if (pcmd->canUndo())
+					pcmd->undo();
 
-			delete pcmd;	// redo 하고 싶다면 delete 하지말고
-							// redo_stack.push(pcmd) 하면 됩니다.
+				delete pcmd;	// redo 하고 싶다면 delete 하지말고
+								// redo_stack.push(pcmd) 하면 됩니다.
+			}
 		}
 	}
 }
-
+// Command 패턴
+// => 명령을 캡슐화 해서 "취소/복구" 등을 가능하게 한다!
 
 
 
