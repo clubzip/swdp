@@ -7,6 +7,8 @@
 // => "Resource Acquision Is Initialization" 의 약자
 // => "자원을 획득하는 것은 (자원관리객체) 가 초기화 될때(생성자)"이다.
 // 
+// => 구글에서 "C++ IDioms" 검색후 1번째 링크 참고
+// 
 // 자원을 획득/반납 하는 것은 생성자/소멸자를 사용해서 해야 합니다.
 template<typename T> struct lock_guard
 {
