@@ -44,7 +44,7 @@ struct IFactory
 {
 	IButton* CreateButton() = 0;
 	IEdit* CreateEdit() = 0;
-	virtual ~WinFactory() = 0;
+	virtual ~IFactory() = 0;
 };
 
 //  style 별로 각 콘트롤을 만드는 공장
