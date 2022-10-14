@@ -67,8 +67,8 @@ public:
 class OSXDialog : public BaseDialog
 {
 public:
-	virtual IButton* CreateButton() override { return new WinButton; }
-	virtual IEdit* CreateEdit() override { return new WinEdit; }
+	virtual IButton* CreateButton() override { return new OSXButton; }
+	virtual IEdit*   CreateEdit() override { return new OSXEdit; }
 };
 
 
