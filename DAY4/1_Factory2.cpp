@@ -74,8 +74,8 @@ int main()
 	ShapeFactory& factory = ShapeFactory::getInstance();
 
 	// 공장에 제품을 등록합니다.
-	factory.Register(1, &Rect::create);
-	factory.Register(2, &Circle::create);
+	factory.Register(1, &Rect::create);		// Register(1, "Rect")
+	factory.Register(2, &Circle::create);	// 다른 언어는 위처럼 문자열등록도가능
 
 
 
