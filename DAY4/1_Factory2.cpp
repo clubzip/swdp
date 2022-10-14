@@ -77,7 +77,8 @@ int main()
 	factory.Register(1, &Rect::create);		// Register(1, "Rect")
 	factory.Register(2, &Circle::create);	// 다른 언어는 위처럼 문자열등록도가능
 
-
+	// 새로운 도형이 추가되면 공장에 추가로 등록은 해야 합니다.!!
+	// factory.Register(3, &Triangle::create);
 
 	while (1)
 	{
