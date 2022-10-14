@@ -18,19 +18,14 @@ class Rect : public Shape
 {
 public:
 	void draw() override { std::cout << "draw Rect" << std::endl; }
-
 	static Shape* create() { return new Rect; }
-
 	virtual Shape* clone() const override { return new Rect(*this); }
 };
-
 class Circle : public Shape
 {
 public:
 	void draw() override { std::cout << "draw Circle" << std::endl; }
-
 	static Shape* create() { return new Circle; }
-
 	virtual Shape* clone() const override { return new Circle(*this); }
 };
 
@@ -78,6 +73,9 @@ int main()
 	factory.Register(2, redRect);
 	factory.Register(3, redCircle);
 
+	// 도전 과제.. 아래 함수도 만들어 보세요
+	factory.ShowSample();	// 등록된 모든 견본 제품을 보여주는 함수
+							// map 에 등록된 모든 견본에 대해 draw 호출
 
 
 
