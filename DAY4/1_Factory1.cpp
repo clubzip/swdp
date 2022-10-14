@@ -21,7 +21,8 @@ public:
 };
 
 // 도형을 만드는 팩토리
-
+// => 도형을 만드는 장소가 한곳으로 집중된다.
+// => 새로운 도형 추가시 아래 클래스만 변경하면 된다.
 class ShapeFactory
 {
 	MAKE_SINGLETON(ShapeFactory)
