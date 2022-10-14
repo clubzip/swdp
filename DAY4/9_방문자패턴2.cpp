@@ -73,8 +73,9 @@ int main()
 {
 	MyList<int> s = { 1,2,3,4,5,6,7,8,9,10 };
 
-	TwiceVisitor<int> tv;
-	s.accept(&tv);
+	TwiceVisitor<int> tv;	// 한개 요소에 대한 연산을 정의한 객체
+	s.accept(&tv);			// 이순간 tv가 모든요소에 연산 수행
+							// => 정확한 의미는 s가 자신의 모든 요소를 tv에 전달
 
 	ShowVisitor<int> sv;
 	s.accept(&sv);
